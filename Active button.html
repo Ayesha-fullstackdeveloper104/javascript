@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <style>
+        body {
+            transition: background-color 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Task #2</h1>
+        <p>Click the button to change the background color.</p>
+        <button id="myBtn">Change Background</button>
+    </div>
+
+    <div>
+        <h1>Task #3</h1>
+        <p>Click the button to increase and decrease.</p>
+        <p>
+            <button onclick="totalclick(1)">+</button>
+            <span id="totalClicks">0</span>
+            <button onclick="totalclick(-1)">-</button>
+        </p>
+    </div>
+    <script>
+        const button = document.getElementById('myBtn');
+
+        button.addEventListener('click', () => {
+            document.body.style.backgroundColor = '#1ec5e5';
+        });
+
+        function incrementButton() {
+
+        }
+
+        function totalclick(click) {
+            const totalclicks = document.getElementById('totalClicks');
+            const sumvalue = parseInt(totalclicks.innerText) + click;
+            console.log(sumvalue + click);
+            totalclicks.innerText = sumvalue;
+
+            if (sumvalue < 0) {
+                totalclicks.innerText = 0;
+            }
+        }    </script>
+</body>
+
+</html>
